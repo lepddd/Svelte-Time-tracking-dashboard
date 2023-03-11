@@ -26,8 +26,6 @@
   let iconSrc = track.title.split(" ").join("-").toLowerCase();
   let cardClass = track.title.toLowerCase().split(" ").join("_");
 
-  console.log(iconSrc)
-
   $: ({ title, timeframes } = track);
 </script>
 
