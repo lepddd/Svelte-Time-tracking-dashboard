@@ -1,1 +1,1 @@
-# Svelte + TS + Vite
+# Svelte Time Tracking Dashboard
