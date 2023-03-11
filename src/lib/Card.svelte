@@ -1,6 +1,5 @@
 <script lang="ts">
   import ellipsis from "/icon-ellipsis.svg";
-  import teste from "/icon-work.svg";
 
   interface Props {
     title: string;
@@ -26,7 +25,7 @@
   let iconSrc = track.title.split(" ").join("-").toLowerCase();
   let cardClass = track.title.toLowerCase().split(" ").join("_");
 
-  $: ({ title, timeframes } = track);
+  $: ({ title, timeframes } = track); //Destructuring Props
 </script>
 
 <div class="card {cardClass}">
@@ -36,22 +35,25 @@
       <p class="details_title">{title}</p>
       <img src={ellipsis} alt="icon" />
     </div>
-    <p class="time">
-      {timeframes[selectedPeriod.toLowerCase()].current}hrs
-    </p>
-    {#if selectedPeriod === "Daily"}
-      <p class="resume">
-        Last Day - {timeframes[selectedPeriod.toLowerCase()].previous}hrs
+
+    <div class="result">
+      <p class="current">
+        {timeframes[selectedPeriod.toLowerCase()].current}hrs
       </p>
-    {:else if selectedPeriod === "Weekly"}
-      <p class="resume">
-        Last Week - {timeframes[selectedPeriod.toLowerCase()].previous}hrs
-      </p>
-    {:else}
-      <p class="resume">
-        Last Month - {timeframes[selectedPeriod.toLowerCase()].previous}hrs
-      </p>
-    {/if}
+      {#if selectedPeriod === "Daily"}
+        <p class="previous">
+          Last Day - {timeframes[selectedPeriod.toLowerCase()].previous}hrs
+        </p>
+      {:else if selectedPeriod === "Weekly"}
+        <p class="previous">
+          Last Week - {timeframes[selectedPeriod.toLowerCase()].previous}hrs
+        </p>
+      {:else}
+        <p class="previous">
+          Last Month - {timeframes[selectedPeriod.toLowerCase()].previous}hrs
+        </p>
+      {/if}
+    </div>
   </section>
 </div>
 
@@ -82,12 +84,17 @@
     font-size: 18px;
     color: #f4f4f4;
   }
-  .time {
+  .result {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .current {
     font-size: 48px;
     color: #f4f4f4;
     font-weight: 300;
   }
-  .resume {
+  .previous {
     color: hsl(235, 45%, 61%);
     font-size: 0.75rem;
   }
@@ -140,5 +147,21 @@
       hsl(43, 84%, 65%) 50%,
       hsl(235, 46%, 20%) 50%
     );
+  }
+
+  @media screen and (max-width: 810px) {
+    .card {
+      width: 320px;
+    }
+    .result {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .current {
+      font-size: 36px;
+    }
   }
 </style>

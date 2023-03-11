@@ -15,13 +15,14 @@
 
 <div class="card">
   <div class="container">
-    <div class="card_photo">
+    <div class="img_box">
       <img class="img" src={perfil} alt="" />
     </div>
 
-    <p class="title">Report for</p>
-
-    <p class="username">Jeremy Robson</p>
+    <div class="user_detail">
+      <p class="title">Report for</p>
+      <p class="username">Jeremy Robson</p>
+    </div>
   </div>
 
   <div class="card_list">
@@ -48,7 +49,7 @@
     background-color: hsl(235, 46%, 20%);
     border-radius: 12px;
   }
-  .card_photo {
+  .img_box {
     margin-bottom: 26px;
     padding: 2px;
     background-color: #f4f4f4;
@@ -95,5 +96,49 @@
 
   button.active {
     color: #f4f4f4;
+  }
+
+  @media screen and (max-width: 1084px) {
+    .card {
+      width: 100%;
+      grid-area: 1 / 1 / 2 / 4;
+    }
+    .container {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+    .card_list {
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 12px;
+    }
+    .img_box {
+      margin-bottom: 0;
+    }
+  }
+
+  @media screen and (max-width: 810px) {
+    .card {
+      width: 320px;
+    }
+    .card_list {
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 12px;
+    }
+    .container {
+      height: fit-content;
+      gap: 20px;
+    }
+    .img_box {
+      width: 60px;
+      height: 60px;
+    }
+    .username {
+      font-size: 24px;
+      color: #f4f4f4;
+      font-weight: 300;
+    }
   }
 </style>

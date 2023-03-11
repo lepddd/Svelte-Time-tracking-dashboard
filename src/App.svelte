@@ -1,7 +1,7 @@
 <script lang="ts">
   import Card from "./lib/Card.svelte";
   import data from "./data/data.json";
-  import Container from "./lib/Grid.svelte";
+  import Container from "./lib/Container.svelte";
   import ProfileCard from "./lib/ProfileCard.svelte";
 
   let selectedPeriod = "Daily";
@@ -22,6 +22,9 @@
 
 <style>
   main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
   }
 </style>
