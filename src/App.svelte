@@ -1,7 +1,7 @@
 <script lang="ts">
   import Card from "./lib/Card.svelte";
   import data from "./data/data.json";
-  import Container from "./lib/Container.svelte";
+  import Container from "./lib/Grid.svelte";
   import ProfileCard from "./lib/ProfileCard.svelte";
 
   let selectedPeriod = "Daily";

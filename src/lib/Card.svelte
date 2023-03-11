@@ -22,8 +22,8 @@
   export let track: Props;
   export let selectedPeriod: string;
 
-  let iconSrc = track.title.split(" ").join("-");
-  let cardClass = track.title.split(" ").join("_").toLowerCase();
+  let iconSrc = track.title.split(" ").join("-").toLowerCase();
+  let cardClass = track.title.toLowerCase().split(" ").join("_");
 
   $: ({ title, timeframes } = track);
 </script>
