@@ -29,7 +29,7 @@
 </script>
 
 <div class="card {cardClass}">
-  <img class="icon" src="../src/assets/icon-{iconSrc}.svg" alt="icon" />
+  <img class="icon" src={`../src/assets/icon-${iconSrc}.svg`} alt="icon" />
   <section class="details">
     <div class="details_top">
       <p class="details_title">{title}</p>
