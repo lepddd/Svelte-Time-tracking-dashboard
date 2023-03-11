@@ -1,6 +1,6 @@
 <script lang="ts">
   import { createEventDispatcher } from "svelte";
-  import perfil from "../assets/image-jeremy.png";
+  import perfil from "/image-jeremy.png";
 
   export let selectedPeriod: string = "";
 

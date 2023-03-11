@@ -1,5 +1,6 @@
 <script lang="ts">
-  import ellipsis from "../assets/icon-ellipsis.svg";
+  import ellipsis from "/icon-ellipsis.svg";
+  import teste from "/icon-work.svg";
 
   interface Props {
     title: string;
@@ -25,11 +26,13 @@
   let iconSrc = track.title.split(" ").join("-").toLowerCase();
   let cardClass = track.title.toLowerCase().split(" ").join("_");
 
+  console.log(iconSrc)
+
   $: ({ title, timeframes } = track);
 </script>
 
 <div class="card {cardClass}">
-  <img class="icon" src={`../src/assets/icon-${iconSrc}.svg`} alt="icon" />
+  <img class="icon" src="/icon-{iconSrc}.svg" alt="icon" />
   <section class="details">
     <div class="details_top">
       <p class="details_title">{title}</p>
